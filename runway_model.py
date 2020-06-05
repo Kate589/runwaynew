@@ -49,7 +49,7 @@ setup_options = {
     'truncation': number(min=1, max=10, step=1, default=5, description='Example input.'),
     'seed': number(min=0, max=1000000, description='A seed used to initialize the model.')
 }
-@runway.setup(options={'checkpoint': runway.file(extension='.jpg)})
+@runway.setup(options={'checkpoint': runway.file(extension='.jpg')})
 def setup(opts):
     checkpoint_path = opts['checkpoint']
     model = load_model_from_checkpoint(checkpoint_path)                                             
