@@ -70,7 +70,7 @@ def generate(model, args):
     # Generate a PIL or Numpy image based on the input caption, and return it
     output_image = runway.file(args['caption'])
     return {
-        'image': output_image
+        'image': runway.file
     }
 
 if __name__ == '__main__':
