@@ -37,7 +37,7 @@
 # Import the Runway SDK. Please install it first with
 # `pip install runway-python`.
 import runway
-from runway.data_types import number, text, image
+from runway.data_types import number, image
 from example_model import ExampleModel
 
 # Setup the model, initialize weights, set the configs of the model, etc.
@@ -62,7 +62,7 @@ def setup(opts):
 # inputs and process outputs. To see a complete list of supported inputs and
 # outputs data types: https://sdk.runwayml.com/en/latest/data_types.html
 @runway.command(name='generate',
-                inputs={ 'caption': text() },
+                inputs={ 'image': image() },
                 outputs={ 'image': image(width=1200, height=1200) },
                 description='Generates a red square when the input text input is "red".')
 def generate(model, args):
