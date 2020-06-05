@@ -37,7 +37,7 @@
 # Import the Runway SDK. Please install it first with
 # `pip install runway-python`.
 import runway
-from runway.data_types import number, image
+from runway.data_types import image
 from example_model import ExampleModel
 
 # Setup the model, initialize weights, set the configs of the model, etc.
@@ -68,7 +68,7 @@ def setup(opts):
 def generate(model, args):
     print('[GENERATE] Ran with caption value "{}"'.format(args['caption']))
     # Generate a PIL or Numpy image based on the input caption, and return it
-    output_image = model.run_on_input(args['caption'])
+    output_image = runway.file(args['caption'])
     return {
         'image': output_image
     }
